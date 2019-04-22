@@ -6,14 +6,7 @@ img {
 	max-width: 100%;
 }
 
-.form-container {
-	font-family: inherit;
-	font-size: 100%;
-	font-weight: 500;
-}
-
 legend {
-	width: auto;
 	font-size: 1.2rem;
 }
 
@@ -35,21 +28,6 @@ input:focus {
 	background-color: azure;
 }
 
-input[type=radio] {
-	width: 2em;
-}
-
-input:focus,
-textarea:focus input:focus,
-textarea:focus {
-	background: rgba(0, 0, 0, .1);
-	border-radius: 4%;
-	outline: none;
-}
-
-
-/*  grids */
-
 main {
 	display: grid;
 }
@@ -62,16 +40,13 @@ main {
 }
 
 
-/* about content */
-
-.about-content {
-	display: grid;
-}
-
-
 /*  gallery */
 
 .gallery {
+	display: grid;
+}
+
+figure {
 	display: grid;
 }
 
@@ -115,7 +90,10 @@ footer {
 		grid-column: 2/3;
 	}
 	.content p {
-		margin-left: 6rem;
+		margin-left: 1rem;
+	}
+	.about-content {
+		grid-column: 2/3;
 	}
 	.mobile-first {
 		display: none;
@@ -169,6 +147,9 @@ footer {
 /* wide screen layout >=64rem (1024px) */
 
 @media screen and (min-width: 64rem) {
+	.mobile-first {
+		display: none;
+	}
 	/*      hero content */
 	/*	about content */
 	/*	gallery */
@@ -182,8 +163,13 @@ footer {
 		grid-column: auto;
 		margin: 0;
 	}
+	.gallery figure {
+		grid-template-columns: 1fr;
+	}
 	.gallery figcaption {
-		margin-left: 2rem
+		margin-left: 2rem;
+		align-self: center;
+		justify-self: center;
 	}
 	/*	article */
 	/*	form */
